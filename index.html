@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dazzle-Suk</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/lightbox.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <script src="https://unpkg.com/page/page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.6/page.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <base href="/" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <main id="main-content"></main>
+    <div id="footer-container"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("../components/navbar.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("navbar-container").innerHTML = html;
+          });
+
+        fetch("../components/footer.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("footer-container").innerHTML = html;
+          });
+
+        page("/home", () => {
+          fetch("../components/Heropage.html")
+            .then((response) => response.text())
+            .then((html) => {
+              document.getElementById("main-content").innerHTML = html;
+            });
+        });
+
+        page("/about", () => {
+          fetch("../pages/about.html")
+            .then((response) => response.text())
+            .then((html) => {
+              document.getElementById("main-content").innerHTML = html;
+            });
+        });
+        page("/portfolio", () => {
+          fetch("../pages/portfolio.html")
+            .then((response) => response.text())
+            .then((html) => {
+              document.getElementById("main-content").innerHTML = html;
+            });
+        });
+
+        page("/dazzle-suk", () => {
+          fetch("../pages/dazzle-suk.html")
+            .then((response) => response.text())
+            .then((html) => {
+              document.getElementById("main-content").innerHTML = html;
+            });
+        });
+        page("/contact", () => {
+          fetch("../pages/contact.html")
+            .then((response) => response.text())
+            .then((html) => {
+              document.getElementById("main-content").innerHTML = html;
+            });
+        });
+
+        page("*", () => {
+          document.getElementById("main-content").innerHTML =
+            "<h1>Page Not Found. Redirecting to Home Page...</h1>";
+          setTimeout(() => {
+            page("/home");
+          }, 2000);
+        });
+
+        page();
+        page("/home");
+      });
+    </script>
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/lightbox-plus-jquery.js"></script>
+  </body>
+</html>
+
