@@ -93,6 +93,10 @@ body {
     font-size: 2rem;
   }
 
+  .text-container {
+    padding: 10px;
+  }
+
   .sub-title {
     font-size: 1.3rem;
   }

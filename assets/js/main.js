@@ -110,7 +110,7 @@ const categories = {
     {
       src: "/assets/images/02 PORTFOLIO/01 GRAPHIC DESIGN/04 MARKETING COLLATERAL DESIGN/01 Total Brochure_Mockup cover.png",
       alt: "Graphic Design 1",
-      design_categories: "Stationery Design",
+      design_categories: "Marketing Collateral Design",
     },
     {
       src: "/assets/images/02 PORTFOLIO/01 GRAPHIC DESIGN/04 MARKETING COLLATERAL DESIGN/02 Total Brochure_Mockup inside.png",
@@ -318,5 +318,3 @@ document.addEventListener("click", function (event) {
 window.onload = function () {
   window.scrollTo(0, 0);
 };
-
-
