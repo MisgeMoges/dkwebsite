@@ -1,159 +1,104 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins/Poppins/Poppins-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins/Poppins/Poppins-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins/Poppins/Poppins-ExtraBold.ttf)
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  color: #444;
+}
+
+.title-container,
+.about-section {
+  background-color: #003d25;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-section {
-  background-color: #053615;
   text-align: center;
-  padding: 0px 0px;
+  padding: 0;
   margin: 40px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .title-container {
-  height: 200px;
+  height: 250px;
   width: 100%;
-  background-color: #053615;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0;
 }
 
-.section-title {
-  font-size: 8rem;
-  font-weight: bold;
+.title-container h1 {
+  font-size: 7rem;
+  font-weight: 700;
   color: transparent;
   -webkit-text-stroke: 1px #fff;
   text-transform: uppercase;
   text-align: center;
 }
 
+.text-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
 .sub-title {
   font-size: 2rem;
-  letter-spacing: 3px;
-  color: #053615;
-  text-align: center;
-  margin: 20px 0 15px;
+  font-weight: 700;
+  color: #014421;
+  margin: 30px 0 10px;
+  text-transform: uppercase;
 }
 
-.about-us {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.text-container {
-  width: 70%;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-}
-
-p {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #333;
-  line-height: 1.5;
-  letter-spacing: 1px;
-}
-
-@media (max-width: 1200px) {
-  .section-title {
-    font-size: 6rem;
-  }
-
-  .text-container {
-    width: 90%;
-  }
+.description {
+  margin-bottom: 20px;
+  font-size: 22px;
 }
 
 @media (max-width: 768px) {
-  .about-us {
-    flex-direction: column;
-  }
-
   .title-container {
-    height: 120px;
+    height: 100px;
+  }
+  .title-container h1 {
+    font-size: 2rem;
   }
 
-  .section-title {
-    font-size: 3rem;
+  .sub-title {
+    font-size: 1.3rem;
   }
 
-  p {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  h2 {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.8;
-    text-align: justify;
-    color: #444;
-    margin-bottom: 15px;
-    padding: 0 10px;
-  }
-
-  .intro p,
-  .intro span {
-    font-size: 1rem;
-    line-height: 1.8;
-    text-align: justify;
-    color: #444;
-    margin-bottom: 25px;
-    padding: 0 10px;
-  }
-
-  .text-container {
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
-
-  .text-container > *:not(:last-child) {
-    margin-bottom: 10px;
-  }
-
-  .intro {
-    padding-left: 5px;
-    word-wrap: break-word;
-    text-align: justify;
-  }
-
-  p,
-  span {
-    font-family: "Poppins", sans-serif;
-    word-break: break-word;
-  }
-
-  h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 2px;
-    margin: 10px auto 0;
+  .intro,
+  .description {
+    font-size: 0.9rem;
   }
 }

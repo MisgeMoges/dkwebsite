@@ -1,4 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@keyframes slide {
+  0%,
+  to {
+    transform: translateX(0);
+  }
+
+  33.33% {
+    transform: translateX(-100%);
+  }
+
+  66.66% {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes dotSync {
+  0%,
+  66.66%,
+  to {
+    background-color: #ddd;
+  }
+
+  33.33% {
+    background-color: #053615;
+  }
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins/Poppins/Poppins-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins/Poppins/Poppins-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url(/assets/fonts/Poppins/Poppins/Poppins-ExtraBold.ttf)
+    format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,11 +58,17 @@
 
 body,
 h1,
+h2,
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+h1,
 h2 {
   margin: 0;
   padding: 0.5;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -19,15 +76,6 @@ body {
   width: 100%;
 }
 
-p {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  color: #333;
-  line-height: 1.2;
-  letter-spacing: 2px;
-  text-align: justify;
-  text-align-last: center;
-}
 .hero-section {
   display: flex;
   flex-direction: row;
@@ -48,10 +96,11 @@ p {
   line-height: 85px;
 }
 
+.hero-content h1,
 .hero-content h2 {
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 4rem;
-  font-weight: bold;
+  font-weight: 700;
   color: #f2f2f2;
   text-align: left;
 }
@@ -60,9 +109,7 @@ p {
   color: transparent;
   font-family: "Poppins", sans-serif;
   font-size: 6rem;
-  font-weight: bold;
   -webkit-text-stroke: 0.8px #fff;
-  text-align: left;
 }
 
 .hero-image {
@@ -77,9 +124,9 @@ p {
   max-width: 750px;
   height: auto;
   object-fit: contain;
-  border-radius: 0px;
+  border-radius: 0;
 }
-/* Clientele Section */
+
 .clientele {
   text-align: center;
   margin: 100px 0;
@@ -90,6 +137,10 @@ p {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: #333;
+  line-height: 1.2;
+  letter-spacing: 1.2px;
+  text-align: justify;
+  text-align-last: center;
 }
 
 .clientele h2 {
@@ -98,7 +149,6 @@ p {
   color: #053615;
 }
 
-/* Carousel Styles */
 .carousel-container {
   overflow: hidden;
   width: 100%;
@@ -123,17 +173,18 @@ p {
   margin: 0 10px;
 }
 
-/* Radio and Dots */
 input[type="radio"] {
   display: none;
 }
 
 #slide1:checked ~ .carousel {
-  transform: translateX(0%);
+  transform: translateX(0);
 }
+
 #slide2:checked ~ .carousel {
   transform: translateX(-100%);
 }
+
 #slide3:checked ~ .carousel {
   transform: translateX(-200%);
 }
@@ -154,19 +205,17 @@ input[type="radio"] {
   transition: background-color 0.3s ease;
 }
 
-.dot:hover,
-.dot:focus {
+.dot:focus,
+.dot:hover {
   background-color: #053615;
 }
 
-/* Active dots when each slide is active */
 #slide1:checked ~ .dots-indicator .dot:nth-child(1),
 #slide2:checked ~ .dots-indicator .dot:nth-child(2),
 #slide3:checked ~ .dots-indicator .dot:nth-child(3) {
   background-color: #053615;
 }
 
-/* Services Section */
 .services {
   text-align: center;
   padding: 50px 0 100px;
@@ -174,16 +223,21 @@ input[type="radio"] {
   margin: 50px 0;
 }
 
+.service-card h3,
 .services h2 {
   font-size: 2rem;
   color: #053615;
   margin-bottom: 80px;
+  font-weight: 700;
 }
 
-/* Service Cards */
+.service-card,
 .services-container {
   display: flex;
   justify-content: center;
+}
+
+.services-container {
   gap: 100px;
   flex-wrap: wrap;
   padding: 0 30px;
@@ -192,14 +246,11 @@ input[type="radio"] {
 .service-card {
   background: #fff;
   border-radius: 30px;
-  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.03);
   padding: 30px;
-  display: flex;
   flex-direction: column;
   width: 350px;
-  height: 350px;
   transition: transform 0.3s ease;
-  justify-content: center;
   gap: 15px;
   align-items: center;
   margin: 20px 0;
@@ -213,8 +264,6 @@ input[type="radio"] {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #053615;
-  font-weight: bold;
   cursor: pointer;
 }
 
@@ -223,24 +272,23 @@ input[type="radio"] {
   padding: 0;
   margin: 0;
   display: none;
+  max-height: auto;
 }
 
-/* Show the ul when hovering over the h3 or the service card */
-.service-card:hover ul,
-.service-card:focus-within ul {
+.service-card:focus-within ul,
+.service-card:hover ul {
   display: block;
 }
 
-/* Style for list items */
 .service-card ul li {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   margin: 20px 0;
   color: #333;
-  padding-bottom: 10px;
   display: flex;
   align-items: center;
   position: relative;
+  padding: 10px 0;
 }
 
 .service-card ul li:not(:last-child)::after {
@@ -254,55 +302,25 @@ input[type="radio"] {
   transform: translateY(5px);
 }
 
-/* Animations */
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
-  }
-  33.33% {
-    transform: translateX(-100%);
-  }
-  66.66% {
-    transform: translateX(-200%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
-
-@keyframes dotSync {
-  0% {
-    background-color: #ddd;
-  }
-  33.33% {
-    background-color: #053615;
-  }
-  66.66% {
-    background-color: #ddd;
-  }
-  100% {
-    background-color: #ddd;
-  }
-}
-
 .dot:nth-child(1) {
   animation: dotSync 12s infinite;
 }
+
 .dot:nth-child(2) {
   animation: dotSync 12s infinite 4s;
 }
+
 .dot:nth-child(3) {
   animation: dotSync 12s infinite 8s;
 }
 
-/* Media Queries */
 @media screen and (min-width: 1366px) {
   .clientele {
-    margin: 200px 0;
+    margin: 150px 0;
   }
 
   .clientele p {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .clientele h2 {
@@ -310,8 +328,8 @@ input[type="radio"] {
   }
 
   .carousel-item img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 150px;
+    max-height: 150px;
   }
 
   .dots-indicator {
@@ -326,22 +344,59 @@ input[type="radio"] {
 
 @media screen and (max-width: 1366px) {
   .hero-section {
-    height: 350px;
+    padding: 30px 50px;
+    min-height: 200px;
   }
 
-  .service-card h3 {
-    cursor: pointer;
+  .hero-content,
+  .hero-image {
+    position: absolute;
+    max-width: 100%;
   }
 
-  .service-card ul li {
-    padding: 10px 0;
+  .hero-content {
+    flex: 1;
+    top: 25%;
+    right: auto;
+    line-height: 85px;
   }
 
-  /* Ensure dropdown does not overflow */
-  .service-card ul {
-    max-height: 300px;
-    overflow-y: auto;
+  .hero-content h1,
+  .hero-content h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    text-align: left;
   }
+
+  .hero-content h1 {
+    font-size: 6rem;
+    color: transparent;
+    -webkit-text-stroke: 0.8px #fff;
+  }
+
+  .hero-content h2 {
+    font-size: 4rem;
+    color: #f2f2f2;
+  }
+
+  .hero-image {
+    display: flex;
+    top: -35%;
+    left: -2%;
+    transform: none;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 800px;
+    height: 700px;
+    object-fit: contain;
+    border-radius: 0;
+  }
+}
+
+.service-card {
+  height: auto;
 }
 
 @media (max-width: 480px) {
@@ -350,13 +405,13 @@ input[type="radio"] {
     font-size: 1.5rem;
   }
 
-  .service-card h3 {
+  .service-card h3,
+  .service-card ul li {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
   }
 
   .service-card ul li {
-    font-family: "Poppins", sans-serif;
     font-size: 0.9rem;
   }
 
@@ -399,13 +454,17 @@ input[type="radio"] {
     margin: 30px 0;
     line-height: 0.5;
   }
+
+  .clientele h2,
   .clientele p {
-    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .clientele p {
+    font-size: 0.8rem;
   }
 
   .clientele h2 {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.5rem;
     margin: 80px 0;
   }
 
@@ -413,6 +472,7 @@ input[type="radio"] {
     max-width: 50px;
   }
 
+  .clientele h2,
   .services h2 {
     font-size: 1.5rem;
   }
@@ -446,36 +506,17 @@ input[type="radio"] {
   }
 }
 
-/* Large Screen (Desktop) */
-@media screen and (min-width: 1366px) {
-  .hero-section {
-    padding: 30px 100px;
-    min-height: 400px;
-  }
-
-  .hero-content h1 {
-    font-size: 6rem;
-  }
-
-  .hero-content h2 {
-    font-size: 4.5rem;
-  }
-
-  .hero-image {
-    transform: translateY(-200px);
-    margin-bottom: -350px;
-  }
-
-  .hero-image img {
-    max-width: 750px;
-  }
-}
-
-/* Tablet View */
 @media screen and (max-width: 1024px) {
   .hero-section {
     padding: 30px;
     min-height: 350px;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    line-height: 85px;
   }
 
   .hero-content h1 {
@@ -518,7 +559,7 @@ input[type="radio"] {
   }
 
   .hero-content {
-    margin-top: 0px;
+    margin-top: 0;
     margin-left: 0;
     text-align: center;
     padding: 20px 0;
@@ -542,8 +583,10 @@ input[type="radio"] {
   }
 
   .hero-content {
-    line-height: 45px;
-    margin-top: 200px;
+    line-height: 50px;
+    position: absolute;
+    top: 60%;
+    left: 15%;
   }
 
   .hero-image img {
@@ -551,6 +594,7 @@ input[type="radio"] {
     max-height: 300px;
   }
 
+  .hero-content h1,
   .hero-content h2 {
     font-size: 2rem;
     text-align: center;
