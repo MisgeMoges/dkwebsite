@@ -313,8 +313,144 @@ input[type="radio"] {
 .dot:nth-child(3) {
   animation: dotSync 12s infinite 8s;
 }
+@media screen and (min-width:1366px) {
+  .clientele {
+    margin: 150px 0
+  }
 
-@media screen and (min-width: 1366px) {
+  .clientele p {
+    font-size: 1.5rem
+  }
+
+  .clientele h2 {
+    font-size: 2.5rem
+  }
+
+  .carousel-item img {
+    max-width: 150px;
+    max-height: 80px
+  }
+
+  .dots-indicator {
+    margin-top: 20px
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px
+  }
+}
+
+ @media screen and (max-width:1366px) {
+  .hero-section {
+    padding: 30px 80px;
+    min-height: 200px
+  }
+
+  .hero-content,
+  .hero-image {
+    position: absolute;
+    max-width: 100%
+  }
+
+  .hero-content {
+    flex: 1;
+    top: 25%;
+    right: auto;
+    line-height: 85px
+  }
+
+  .hero-content h1,
+  .hero-content h2 {
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    
+  }
+
+  .hero-content h1 {
+    font-size: 6rem;
+    color: transparent;
+    -webkit-text-stroke: .8px #fff;
+    margin-left: 500px;
+  }
+
+  .hero-content h2 {
+    font-size: 4rem;
+    color: #f2f2f2;
+    margin-left: 500px;
+  }
+
+  .hero-image {
+    display: flex;
+    top: -35%;
+    left: -2%;
+    transform: none
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    object-fit: contain;
+    border-radius: 0;
+    margin-left: 80px;
+  }
+}
+
+.service-card {
+  height: auto
+}
+
+@media (max-width:480px) {
+  .services h2 {
+    font-family: Poppins, sans-serif;
+    font-size: 1.5rem
+  }
+
+  .service-card h3,
+  .service-card ul li {
+    font-family: Poppins, sans-serif;
+    font-size: 1rem
+  }
+
+  .service-card ul li {
+    font-size: .9rem
+  }
+
+  .service-card ul {
+    padding: 0 10px
+  }
+}
+
+@media screen and (max-width:768px) {
+  .clientele {
+    margin: 100px 0
+  }
+
+  .clientele p {
+    font-size: 1.5rem
+  }
+
+  .clientele h2 {
+    font-size: 1.2rem;
+    margin: 80px 0
+  }
+
+  .carousel-item img {
+    max-width: 60px
+  }
+
+  .services-container {
+    flex-direction: column;
+    align-items: center
+  }
+
+  .service-card {
+    width: 90%;
+    height: auto
+  }
+}
+/* @media screen and (min-width: 1366px) {
   .clientele {
     margin: 150px 0;
   }
@@ -340,9 +476,9 @@ input[type="radio"] {
     width: 12px;
     height: 12px;
   }
-}
+} */
 
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
   .hero-section {
     padding: 30px 50px;
     min-height: 200px;
@@ -396,7 +532,7 @@ input[type="radio"] {
     object-fit: contain;
     border-radius: 0;
   }
-}
+} */
 
 .service-card {
   height: auto;
