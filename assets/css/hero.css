@@ -341,23 +341,17 @@ input[type="radio"] {
   }
 }
 
- @media screen and (min-width:1366px) {
+@media screen and (min-width:1366px) {
   .hero-section {
-    
     padding: 30px 80px;
     min-height: 200px
   }
 
-  .hero-content,
-  .hero-image {
-    position: absolute;
-    max-width: 100%
-  }
-
   .hero-content {
+    position: absolute;
     flex: 1;
     top: 25%;
-    right: auto;
+    left: 13%;
     line-height: 85px
   }
 
@@ -369,7 +363,7 @@ input[type="radio"] {
   }
 
   .hero-content h1 {
-    font-size: 6rem;
+    font-size: 5rem;
     color: transparent;
     -webkit-text-stroke: .8px #fff;
     margin-left: 500px;
@@ -382,9 +376,11 @@ input[type="radio"] {
   }
 
   .hero-image {
+    position: absolute;
+    max-width: 100%;
     display: flex;
     top: -35%;
-    left: -2%;
+    left: 3%;
     transform: none
   }
 
@@ -401,6 +397,7 @@ input[type="radio"] {
 .service-card {
   height: auto
 }
+
 
 
 
