@@ -343,6 +343,7 @@ input[type="radio"] {
 
  @media screen and (min-width:1366px) {
   .hero-section {
+    
     padding: 30px 80px;
     min-height: 200px
   }
