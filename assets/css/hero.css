@@ -344,7 +344,6 @@ input[type="radio"] {
 
 @media screen and (max-width: 1366px) {
   .hero-section {
-    scale:0.8;
     padding: 30px 50px;
     min-height: 200px;
   }
@@ -391,7 +390,6 @@ input[type="radio"] {
   }
 
   .hero-image img {
-    scale:0.8;
     width: 100%;
     max-width: 800px;
     height: 700px;
