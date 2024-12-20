@@ -344,6 +344,7 @@ input[type="radio"] {
 
 @media screen and (max-width: 1366px) {
   .hero-section {
+    scale:0.8;
     padding: 30px 50px;
     min-height: 200px;
   }
@@ -352,9 +353,11 @@ input[type="radio"] {
   .hero-image {
     position: absolute;
     max-width: 100%;
+    scale:0.8;
   }
 
   .hero-content {
+    scale:0.8;
     flex: 1;
     top: 25%;
     right: auto;
@@ -363,6 +366,7 @@ input[type="radio"] {
 
   .hero-content h1,
   .hero-content h2 {
+    scale:0.8;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-align: left;
@@ -387,6 +391,7 @@ input[type="radio"] {
   }
 
   .hero-image img {
+    scale:0.8;
     width: 100%;
     max-width: 800px;
     height: 700px;
